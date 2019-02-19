@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 	
-	public int speed = 5;
+	public int speed = 10;
 	
 	// Use this for initialization
 	void Start () {
@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 direction = new Vector3(Input.GetAxis("Horizontal")*speed,0,Input.GetAxis("Vertical")*speed);
-		transform.GetComponent<Rigidbody>().velocity = direction;
+		Vector3 movement = new Vector3(Input.GetAxis("Horizontal")*speed,0,Input.GetAxis("Vertical")*speed);
+		transform.GetComponent<Rigidbody>().velocity = movement;
 	}
 }
