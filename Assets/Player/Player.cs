@@ -16,4 +16,5 @@ public class Player : MonoBehaviour {
 		Vector3 movement = new Vector3(Input.GetAxis("Horizontal")*speed,0,Input.GetAxis("Vertical")*speed);
 		transform.GetComponent<Rigidbody>().velocity = movement;
 	}
+
 }
