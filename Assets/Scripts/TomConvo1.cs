@@ -10,69 +10,73 @@ public class TomConvo1 : MonoBehaviour {
     public GameObject Choice1;
     public GameObject Choice2;
     public GameObject ContinueButton;
+    public Button Button1;
+    public Button Button2;
+    public Button ContButton;
     int Option;
     int choice;
+    int cont;
     bool rememberedName;
-    bool doneReading = false;
     string playerName = "Jackie";
 
     void Start() {
+        Debug.Log("Start");
         Option = 0;
-        choice = 0;
         Choice1.SetActive(false);
         Choice2.SetActive(false);
         ContinueButton.SetActive(false);
+        Button1.onClick.AddListener(ChooseOption1);
+        Button2.onClick.AddListener(ChooseOption2);
+        ContButton.onClick.AddListener(Continue);
+    }
+
+    void loop()
+    {
     }
 
     public void Part1()
     {
+        Debug.Log("Part1");
         TomText.fontSize = 35;
         TomText.text = "Hey! It's nice to see you again!";
         PlayerText1.text = "It's been a while, Tom!";
         PlayerText2.text = "Who are you?";
+        choice = 1;
         Choosing();
         Debug.Log("Done with Part 1 :(");
     }
-
+    
     void Part2a()
     {
+        Debug.Log("2a");
         TomText.text = "Well some of us have succesful jobs.";
-        while (doneReading == false)
-        {
-            Reading();
-        }
-        doneReading = false;
-        StartCoroutine(Part3());
+        cont = 1;
+        Reading();
     }
-
+    
     void Part2b()
     {
         Debug.Log("Starting 2b!!");
         TomText.text = "I'm your friend Tom! It figures you'd forget me already.";
-        while (doneReading == false)
-        {
-            Debug.Log("Oh no! I'm stuck in a while loop. >:(");
-            Reading();
-        }
-        doneReading = false;
-        StartCoroutine(Part3());
+        cont = 2;
+        Reading();
     }
-
-    IEnumerator Part3()
+    
+    void Part3()
     {
+        Debug.Log("Part3");
         TomText.fontSize = 25;
         TomText.text = "I heard that your family is going through some tough times. I could pay you to do a few jobs for me.";
-        yield return true;
         PlayerText1.text = "What do you want me to do?";
         PlayerText2.text = "I don't need your help";
-        Choosing();
         choice = 2;
+        Choosing();
     }
 
-    IEnumerator Part3c()
+    void Part3c()
     {
+        Debug.Log("3c");
         TomText.text = "Then why did you come here?";
-        yield return new WaitForSeconds(3);
         if (rememberedName==true)
         {
             TomText.text = "You're not in a place to be picky with the state of your farm.";
@@ -81,26 +85,30 @@ public class TomConvo1 : MonoBehaviour {
         {
             TomText.text = "Come on! Help a friend out! I mean so much to you that you forgot my name, remember?";
         }
-        yield return new WaitForSeconds(5);
-        Part4();
+        cont = 2;
+        Reading();
     }
 
     void Part4()
     {
+        Debug.Log("Part4");
+        TomText.fontSize = 26;
         TomText.text = "I'm running low on wood. If you can get me 20 planks of wood. I'll pay you $3.50.";
         PlayerText1.text = "Only $3.50!?!";
         PlayerText2.text = "Thanks, Tim!";
-        Choosing();
         choice = 3;
+        Choosing();
     }
 
     void Part5a()
     {
+        Debug.Log("5a");
         TomText.text = "Times are hard. Take what you can get, Ninnyhammer!";
     }
 
     void Part5b()
     {
+        Debug.Log("5b");
         if (rememberedName == true)
         {
             TomText.text = "My name's Tom! Wow! I thought we were friends!!";
@@ -121,9 +129,10 @@ public class TomConvo1 : MonoBehaviour {
             }
         }
     }
-
+    
     public void ChooseOption1()
     {
+        Debug.Log("ChooseOption1");
         if (choice==1)
         {
             Part2a();
@@ -139,9 +148,9 @@ public class TomConvo1 : MonoBehaviour {
         }
         NotChoosing();
     }
-
+    
     public void ChooseOption2() {
-        Debug.Log("In the void :)");
+        Debug.Log("ChooseOption2");
         if (choice == 1)
         {
             Debug.Log("In the if :)");
@@ -150,7 +159,7 @@ public class TomConvo1 : MonoBehaviour {
         }
         else if (choice == 2)
         {
-            StartCoroutine(Part3c());
+           Part3c();
         }
         else if (choice == 3)
         {
@@ -162,30 +171,41 @@ public class TomConvo1 : MonoBehaviour {
 
     public void Continue()
     {
-        doneReading = true;
+        Debug.Log("ContinueVoid");
+        if (cont == 1)
+        {
+            Part3();
+        }
+        else if (cont == 2)
+        {
+            Part4();
+        }
+        NotReading();
     }
-
+    
     void Choosing ()
     {
+        Debug.Log("ChoosingVoid");
         Choice1.SetActive(true);
         Choice2.SetActive(true);
-        choice++;
-        Debug.Log(choice);
     }
-
+    
     void Reading ()
     {
+        Debug.Log("ReadingVoid");
         ContinueButton.SetActive(true);
     }
-
+    
     void NotChoosing ()
     {
+        Debug.Log("NotChoosingVoid");
         Choice1.SetActive(false);
         Choice2.SetActive(false);
     }
-
+    
     void NotReading ()
     {
+        Debug.Log("NotReadingVoid");
         ContinueButton.SetActive(false);
     }
 }
