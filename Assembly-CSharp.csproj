@@ -59,6 +59,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ConversationTemplate.cs" />
+    <Compile Include="Assets\Scripts\FirstInteractionWithDick.cs" />
     <Compile Include="Assets\Scripts\MakeButton.cs" />
     <Compile Include="Assets\Scripts\TomConvo1.cs" />
     <Reference Include="UnityEditor.StandardEvents">
