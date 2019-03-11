@@ -60,6 +60,7 @@ public class Controller : MonoBehaviour {
 			CurrentMenu.SetActive(false);
 		}
 		FullPanel.SetActive(false);
+		PauseButton.SetActive(true);
 	}
 	
 	public void StartGame() {
