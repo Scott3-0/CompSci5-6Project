@@ -1,12 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-<<<<<<< HEAD
-- path: Assets/Scenes/Main.unity
-=======
-- path: Assets/Scenes/Dick Conversation.unity
->>>>>>> Nathaniel
-=======
-- path: Assets/Scenes/Libertyville.unity
->>>>>>> master
+- path: Assets/Scenes/Navmesh test.unity
   isLoaded: 1
   isActive: 1

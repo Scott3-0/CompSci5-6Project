@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TomConvo1 : MonoBehaviour {
     public Text TomText;
@@ -94,6 +95,10 @@ public class TomConvo1 : MonoBehaviour {
     void Part5a()
     {
         TomText.text = "Times are hard. Take what you can get, Ninnyhammer!";
+        cont = 3;
+        Reading();
+
+
     }
 
     void Part5b()
@@ -117,6 +122,8 @@ public class TomConvo1 : MonoBehaviour {
                 TomText.text = "Ugh! Whatever. It's fine. Have fun, Waldo.";
             }
         }
+        cont = 3;
+        Reading();
     }
     
     public void ChooseOption1()
@@ -164,6 +171,10 @@ public class TomConvo1 : MonoBehaviour {
         else if (cont == 2)
         {
             Part4();
+        }
+        else if(cont == 3)
+        {
+            SceneManager.LoadScene("Libertyville");
         }
     }
     
