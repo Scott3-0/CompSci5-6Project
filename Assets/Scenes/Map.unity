@@ -431,12 +431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Map: {fileID: 445251562}
-  ZoomIn: {fileID: 0}
-  ZoomOut: {fileID: 0}
-  Up: {fileID: 0}
-  Down: {fileID: 0}
-  Left: {fileID: 0}
-  Right: {fileID: 0}
+  Libertyville: {fileID: 0}
 --- !u!1 &545262427
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,10 +701,10 @@ RectTransform:
   m_Father: {fileID: 445251560}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 105.79999, y: -161.1}
-  m_SizeDelta: {x: 100, y: 30}
+  m_SizeDelta: {x: -2146, y: -2216}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1683252917
 MonoBehaviour:
