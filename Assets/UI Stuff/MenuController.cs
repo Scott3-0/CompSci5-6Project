@@ -3,13 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Controller : MonoBehaviour {
-	
-	public string PlayerName = "Mysterious Person";
-	
-	public float volume = 0;
-	public bool paused = false;
-	
+public class MenuController : MonoBehaviour {
+
 	public GameObject FullPanel;
 	public GameObject MainMenu;
 	public GameObject SettingsMenu;
@@ -21,33 +16,30 @@ public class Controller : MonoBehaviour {
 	
 	public Slider VolumeSlider;
 	
-	public int Money = 350; //this is in cents!!!
-	
 	public void ChooseName(string newname) {
-		PlayerName = newname;
+		Globals.playerName = newname;
 		CloseMenus();
-	}
-	
-	public string FormatMoney() {
-		string str = Money.ToString();//TODO: make it not break when money is 0
-		str = str.Insert(str.Length-2,".");
-		return str;
+		Globals.gameState = GameState.World;
 	}
 	
 	// Use this for initialization
 	void Start () {
 		SwitchToMenu(MainMenu);
+		Debug.Log(Globals.FormatMoney());
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(Input.GetKeyDown("p")){
+			TogglePause();
+		}
 	}
 	
 	//main menu
 	
 	private void SwitchToMenu(GameObject newmenu) {
 		FullPanel.SetActive(true);
+		PauseButton.SetActive(false);
 		if (CurrentMenu != null) {
 			CurrentMenu.SetActive(false);
 		}
@@ -72,7 +64,7 @@ public class Controller : MonoBehaviour {
 	}
 	
 	public void CloseSettings() {
-		if(paused){
+		if(Globals.gameState == GameState.Paused){
 			SwitchToMenu(PauseMenu);
 		} else {
 			SwitchToMenu(MainMenu);
@@ -89,7 +81,7 @@ public class Controller : MonoBehaviour {
 	}
 	
 	public void UpdateVolume() {
-		volume = VolumeSlider.value;
+		Globals.volume = VolumeSlider.value;
 	}
 	
 	public void OpenPauseMenu() {
@@ -97,12 +89,20 @@ public class Controller : MonoBehaviour {
 	}
 	
 	public void Pause() {
-		paused = true;
+		Globals.gameState = GameState.Paused;
 		SwitchToMenu(PauseMenu);
 	}
 	
 	public void Unpause() {
-		paused = false;
+		Globals.gameState = GameState.World;
 		CloseMenus();
+	}
+	
+	public void TogglePause() {
+		if(Globals.gameState == GameState.World){
+			Pause();
+		} else if (Globals.gameState == GameState.Paused){
+			Unpause();
+		}
 	}
 }
