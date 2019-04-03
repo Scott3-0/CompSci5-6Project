@@ -7,16 +7,46 @@ public class MAP : MonoBehaviour {
 
     public Image Map;
     public Button Libertyville;
+	
+	private float scale = 2;
+	private float panX = -200;
+	private float panY = 0;
 
 	void Start (){
     }
 	
 	void Update () 
     {
-        //Move the map
-        Vector2 tempV = new Vector2(-Input.GetAxis("Horizontal") * 4, -Input.GetAxis("Vertical") * 4);
-        Map.rectTransform.anchoredPosition += tempV;
-		//Zoom the map
+		
+		//Zoom
+		if(Input.GetAxis("Mouse ScrollWheel")>0){
+			scale = scale * 1.11f;
+		} else if(Input.GetAxis("Mouse ScrollWheel")<0){
+			scale = scale * 0.9f;
+		}
+		if(scale > 5f){
+			scale = 5f;
+		} else if(scale < 1.2f){
+			scale = 1.2f;
+		}
+		Map.GetComponent<RectTransform>().localScale = new Vector2(scale, scale);
+        
+		
+		//Pan
+		panX += -Input.GetAxis("Horizontal") * 4;
+		if(panX < -400 * scale){
+			panX = -400 * scale;
+		} else if(panX > 100 * scale){
+			panX = 100 * scale;
+		}
+		panY += -Input.GetAxis("Vertical") * 4;
+		if(panY < -200 * scale){
+			panY = -200 * scale;
+		} else if(panY > 300 * scale){
+			panY = 300 * scale;
+		}
+        Map.rectTransform.anchoredPosition = new Vector2(panX, panY);
+
 		//I hope we never have to resurrect this beast
 		/*
         if (Map.GetComponent<RectTransform>().anchorMin.x <= 1.5 && Map.GetComponent<RectTransform>().anchorMin.y <= 1.5 &&
@@ -39,14 +69,6 @@ public class MAP : MonoBehaviour {
             //Libertyville.GetComponent<RectTransform>().anchorMax = Map.GetComponent<RectTransform>().anchorMax;
         }
 		*/
-		//Sane version
-		if(Input.GetAxis("Mouse ScrollWheel")>0){
-			Vector2 oldScale = Map.GetComponent<RectTransform>().localScale;
-			Map.GetComponent<RectTransform>().localScale = new Vector2(oldScale.x + 0.5f,oldScale.y + 0.5f);
-		} else if(Input.GetAxis("Mouse ScrollWheel")<0){
-			Vector2 oldScale = Map.GetComponent<RectTransform>().localScale;
-			Map.GetComponent<RectTransform>().localScale = new Vector2(oldScale.x - 0.5f,oldScale.y - 0.5f);
-		}
         
     }
 }
