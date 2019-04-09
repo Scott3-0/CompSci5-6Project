@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Tilemap Test.unity
+=======
+- path: Assets/Scenes/2D libertyville.unity
+>>>>>>> master
   isLoaded: 1
   isActive: 1
