@@ -174,7 +174,7 @@ public class TomConvo1 : MonoBehaviour {
         }
         else if(cont == 3)
         {
-            SceneManager.LoadScene("Libertyville");
+            SceneManager.LoadScene("2D libertyville");
         }
     }
     
