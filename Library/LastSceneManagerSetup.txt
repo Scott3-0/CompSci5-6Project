@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< Updated upstream
 - path: Assets/Scenes/Map.unity
+=======
+- path: Assets/Scenes/Bad scene with NPCs.unity
+>>>>>>> Stashed changes
   isLoaded: 1
   isActive: 1

@@ -62,7 +62,9 @@
     <Compile Include="Assets\Scripts\ConversationTemplate.cs" />
     <Compile Include="Assets\Scripts\FirstInteractionWithDick.cs" />
     <Compile Include="Assets\Scripts\MakeButton.cs" />
-    <Compile Include="Assets\Scripts\MAP.cs" />
+    <Compile Include="Assets\Scripts\Navmesh Test.cs" />
+    <Compile Include="Assets\Scripts\NPCTalk.cs" />
+    <Compile Include="Assets\Scripts\player2D.cs" />
     <Compile Include="Assets\Scripts\TomConvo1.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/nnelson7322/Documents/CompSci5-6Project/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
@@ -73,9 +75,19 @@
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>C:/Users/nnelson7322/Documents/CompSci5-6Project/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.CollabProxy.Editor">
+      <HintPath>C:/Users/nnelson7322/Documents/CompSci5-6Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/nnelson7322/Documents/CompSci5-6Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
+<<<<<<<
+
+=======
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>C:/Users/nnelson7322/Documents/CompSci5-6Project/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+    </Reference>
+>>>>>>>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
     </Reference>
@@ -271,12 +283,29 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+<<<<<<<
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/nnelson7322/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+=======
+    <Reference Include="Unity.Analytics.Editor">
+      <HintPath>C:/Users/nnelson7322/Documents/CompSci5-6Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+>>>>>>>
     </Reference>
+<<<<<<<
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/nnelson7322/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+=======
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>C:/Users/nnelson7322/Documents/CompSci5-6Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+>>>>>>>
     </Reference>
+<<<<<<<
+
+=======
+    <Reference Include="Unity.Analytics.Tracker">
+      <HintPath>C:/Users/nnelson7322/Documents/CompSci5-6Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+>>>>>>>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
     </Reference>
