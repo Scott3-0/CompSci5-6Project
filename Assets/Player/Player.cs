@@ -13,8 +13,10 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 movement = new Vector3(Input.GetAxis("Horizontal")*speed,0,Input.GetAxis("Vertical")*speed);
-		transform.GetComponent<Rigidbody>().velocity = movement;
+		if (Globals.gameState == GameState.World) {
+			Vector3 movement = new Vector3(Input.GetAxis("Horizontal")*speed,0,Input.GetAxis("Vertical")*speed);
+			transform.GetComponent<Rigidbody>().velocity = movement;
+		}
 	}
 
 }

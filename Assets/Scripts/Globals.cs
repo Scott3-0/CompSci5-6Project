@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum GameState {MainMenu, Paused, World, Map};
 
-//just for having static variables, don't instatiate this class
+//just for having static variables, don't instantiate this class
 public class Globals : MonoBehaviour {
 	
 	public static string playerName = "Mysterious Person";

@@ -10,10 +10,13 @@ public class MenuController : MonoBehaviour {
 	public GameObject MainMenu;
 	public GameObject SettingsMenu;
 	public GameObject NameChooser;
-	public GameObject HUD;
 	public GameObject PauseMenu;
+	
+	public GameObject HUD;
 	public GameObject InfoBar;
 	public Text MoneyText;
+	
+	public GameObject Map;
 	
 	private GameObject CurrentMenu = null;//null means no menu is open
 	
@@ -110,6 +113,13 @@ public class MenuController : MonoBehaviour {
 	}
 	
 	public void OpenMap() {
-		
+		Map.SetActive(true);
+		Globals.gameState = GameState.Map;
 	}
+	
+	public void CloseMap() {
+		Map.SetActive(false);
+		Globals.gameState = GameState.World;
+	}
+	
 }

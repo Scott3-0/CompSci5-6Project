@@ -36,6 +36,7 @@ public class CityPopup : MonoBehaviour {
 	
 	public void Travel() {
 		SceneManager.LoadScene(SceneName);
+		Globals.CurrentCity = SceneName;
 	}
 	
 }

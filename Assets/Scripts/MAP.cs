@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MAP : MonoBehaviour {
 
     public Image Map;
     public Button Libertyville;
 	
-	private float scale = 2;
+	private float scale = 1;
 	private float panX = -200;
 	private float panY = 0;
 
@@ -24,10 +25,10 @@ public class MAP : MonoBehaviour {
 		} else if(Input.GetAxis("Mouse ScrollWheel")<0){
 			scale = scale * 0.9f;
 		}
-		if(scale > 5f){
-			scale = 5f;
-		} else if(scale < 1.2f){
-			scale = 1.2f;
+		if(scale > 2f){
+			scale = 2f;
+		} else if(scale < 0.5f){
+			scale = 0.5f;
 		}
 		Map.GetComponent<RectTransform>().localScale = new Vector2(scale, scale);
         
