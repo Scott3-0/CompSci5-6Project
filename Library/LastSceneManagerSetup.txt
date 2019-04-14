@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Tilemap Test.unity
-=======
-- path: Assets/Scenes/2D libertyville.unity
->>>>>>> master
+- path: Assets/Scenes/Tom conversation.unity
   isLoaded: 1
   isActive: 1
