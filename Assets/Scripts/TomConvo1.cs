@@ -25,6 +25,7 @@ public class TomConvo1 : MonoBehaviour {
         Choice1.SetActive(false);
         Choice2.SetActive(false);
         ContinueButton.SetActive(false);
+        Part1();
         Button1.onClick.AddListener(ChooseOption1);
         Button2.onClick.AddListener(ChooseOption2);
         ContButton.onClick.AddListener(Continue);

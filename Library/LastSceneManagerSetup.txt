@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Tom conversation.unity
+- path: Assets/Scenes/2D libertyville.unity
   isLoaded: 1
   isActive: 1
