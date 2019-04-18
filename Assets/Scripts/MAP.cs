@@ -35,7 +35,7 @@ public class MAP : MonoBehaviour {
             Map.GetComponent<RectTransform>().anchorMin += new Vector2(-Input.GetAxis("Mouse ScrollWheel"), -Input.GetAxis("Mouse ScrollWheel"));
             Map.GetComponent<RectTransform>().anchorMax += new Vector2(Input.GetAxis("Mouse ScrollWheel"), Input.GetAxis("Mouse ScrollWheel"));
             Libertyville.GetComponent<RectTransform>().anchorMin = Map.GetComponent<RectTransform>().anchorMin;
-            Libertyville.GetComponent<RectTransform>().anchorMax = Map.GetComponent<RectTransform>().anchorMax
+            Libertyville.GetComponent<RectTransform>().anchorMax = Map.GetComponent<RectTransform>().anchorMax;
         }
         
     }

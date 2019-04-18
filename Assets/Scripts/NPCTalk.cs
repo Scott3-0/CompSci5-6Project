@@ -17,7 +17,7 @@ public class NPCTalk : MonoBehaviour
         string Text8 = "If at first you don't succeed, it's called attempted murder.";
         string Text9 = "";
 
-        string[] Libertyville = [Text1, Text2];
+        //string[] Libertyville = [Text1, Text2];
     }
 
     // Update is called once per frame
